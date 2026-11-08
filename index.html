@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Word Match</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <!-- MAIN MENU -->
+        <section id="menu">
+            <div class="brand">
+                <span class="brand-icon">Parp Enterprises</span>
+                <span>FRENCH WORD MATCH</span>
+            </div>
+
+            <div class="hero">
+                <h1>French<br><span>Matchy Matchy</span></h1>
+                <p class="hero-description">
+                    Pick a subject, flip the cards and discover
+                    how many French words you know!
+                </p>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Choose your subject</h2>
+                    <p>What would you like to practise today?</p>
+                </div>
+                <span class="word-count">6 SUBJECTS</span>
+            </div>
+
+            <div class="subjects">
+                <button class="subject-card food" onclick="startGame('Food')">
+                    <span class="subject-icon">🍱</span>
+                    <span class="subject-name">Food</span>
+                    <span class="subject-detail">Food &amp; drink</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+                <button class="subject-card numbers" onclick="startGame('Numbers')">
+                    <span class="subject-icon">🔢</span>
+                    <span class="subject-name">Numbers</span>
+                    <span class="subject-detail">Count in Japanese</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+                <button class="subject-card greetings" onclick="startGame('Greetings')">
+                    <span class="subject-icon">👋</span>
+                    <span class="subject-name">Greetings</span>
+                    <span class="subject-detail">Everyday expressions</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+                <button class="subject-card people" onclick="startGame('People')">
+                    <span class="subject-icon">👥</span>
+                    <span class="subject-name">People</span>
+                    <span class="subject-detail">Family &amp; friends</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+                <button class="subject-card objects" onclick="startGame('Everyday Objects')">
+                    <span class="subject-icon">🏠</span>
+                    <span class="subject-name">Everyday Objects</span>
+                    <span class="subject-detail">Things around you</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+                <button class="subject-card travel" onclick="startGame('Travel & Places')">
+                    <span class="subject-icon">✈️</span>
+                    <span class="subject-name">Travel & Places</span>
+                    <span class="subject-detail">Explore Japan</span>
+                    <span class="subject-arrow">↗</span>
+                </button>
+            </div>
+
+            <div class="menu-footer">
+                <span>Match it up！</span>
+                
+            </div>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="game" class="hidden">
+            <div class="game-header">
+                <button class="back-button" onclick="showMenu()">← Subjects</button>
+                <div class="game-heading">
+                    <span class="game-icon" id="gameIcon">🍱</span>
+                    <h1 id="subjectTitle">Food</h1>
+                </div>
+                <button class="primary-button compact-button" onclick="startGame(currentSubject)">↻ New game</button>
+            </div>
+
+            <p class="game-instructions">Find the Japanese words and their English matches.</p>
+
+            <!-- GAME BOARD -->
+            <div id="gameBoard" class="game-board"></div>
+
+            <!-- PROGRESS AND MESSAGE -->
+            <div class="progress-container">
+                <div class="progress-top">
+                    <span>YOUR PROGRESS</span>
+                    <span id="score">0 / 10 pairs</span>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="message" class="message" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
