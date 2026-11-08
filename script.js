@@ -2,9 +2,6 @@
 // 1. VOCABULARY BANK
 // ======================================
 
-// ======================================
-// 1. VOCABULARY BANK
-// ======================================
 
 const vocabulary = {
 
@@ -643,7 +640,7 @@ let selectedCards = [];
 let matchedPairs = 0;
 let lockBoard = false;
 
-const numberOfPairs = 10;
+const numberOfPairs = window.innerWidth <= 700 ? 6 : 10;
 
 
 // Sound Effect Generator (Web Audio API)
