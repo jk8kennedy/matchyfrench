@@ -640,7 +640,7 @@ let selectedCards = [];
 let matchedPairs = 0;
 let lockBoard = false;
 
-const numberOfPairs = window.innerWidth <= 700 ? 6 : 10;
+const numberOfPairs = window.innerWidth <= 700 ? 8 : 10;
 
 
 // Sound Effect Generator (Web Audio API)
