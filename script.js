@@ -417,7 +417,7 @@ People: [
     { fr: "passager", en: "Passenger", emoji: "💺" },
     { fr: "membre", en: "Member", emoji: "🪪" },
     { fr: "public", en: "Audience", emoji: "👥" }
-].
+],
 
 "Everyday Objects": [
     { fr: "livre", en: "Book", emoji: "📚" },
