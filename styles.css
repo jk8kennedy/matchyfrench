@@ -660,33 +660,33 @@ body {
         font-size: 18px;
     }
 
-    /* 3 columns x 4 rows for mobile (12 cards total) */
+    /* 4 columns x 4 rows for mobile (16 cards total) */
     .game-board {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-template-rows: repeat(4, minmax(0, 1fr));
         gap: 8px;
-        max-width: 450px;
+        max-width: 500px;
     }
 
     .card {
-        height: 115px;
+        height: 105px; /* Slightly adjusted to fit 4 rows comfortably on mobile screens */
     }
 
     .card-face {
         border-radius: 11px;
-        padding: 6px;
+        padding: 4px;
     }
 
     .card-back-emoji {
-        font-size: clamp(28px, 8vw, 42px);
+        font-size: clamp(24px, 7vw, 36px);
     }
 
     .french-word {
-        font-size: clamp(15px, 4.5vw, 20px);
+        font-size: clamp(14px, 4vw, 18px);
     }
 
     .english {
-        font-size: clamp(14px, 4vw, 18px);
+        font-size: clamp(13px, 3.5vw, 16px);
     }
 
 }
