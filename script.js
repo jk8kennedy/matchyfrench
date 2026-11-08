@@ -624,7 +624,6 @@ People: [
 
 };
 
-
 // Get category emoji for the back of cards
 function getSubjectEmoji(subject) {
     return subjectIcons[subject] || "✨";
@@ -640,6 +639,7 @@ let selectedCards = [];
 let matchedPairs = 0;
 let lockBoard = false;
 
+// Dynamically set pairs: 8 pairs (16 cards, 4x4) for mobile, 10 pairs (20 cards, 5x4) for desktop
 const numberOfPairs = window.innerWidth <= 700 ? 8 : 10;
 
 
@@ -729,7 +729,7 @@ function startGame(subject) {
     const board = document.getElementById("gameBoard");
     board.innerHTML = "";
 
-    // Select 10 random vocabulary entries
+    // Select random vocabulary entries based on numberOfPairs
     const words = shuffleArray(vocabulary[subject]);
     const selectedWords = words.slice(0, numberOfPairs);
 
@@ -755,21 +755,22 @@ function startGame(subject) {
         });
     });
 
-    // Shuffle all 20 cards
+    // Shuffle all cards (16 on mobile, 20 on desktop)
     cards = shuffleArray(cards);
 
-    // Create the cards on screen
-    cards.forEach(card => {
+    // Create the cards on screen with classroom numbers on the back
+    cards.forEach((card, index) => {
         const cardElement = document.createElement("button");
 
         cardElement.type = "button";
         cardElement.classList.add("card");
-        cardElement.setAttribute("aria-label", "Hidden memory card");
+        cardElement.setAttribute("aria-label", `Hidden memory card ${index + 1}`);
 
         cardElement.innerHTML = `
             <div class="card-inner">
                 <div class="card-face card-back">
-                    <span class="card-back-emoji" aria-hidden="true">${card.backEmoji}</span>
+                    <span class="card-back-number">${index + 1}</span>
+                    <span class="card-back-label">Carte</span>
                 </div>
                 <div class="card-face card-front">
                     ${
@@ -866,7 +867,7 @@ function checkMatch() {
         // Check if all pairs have been found
         if (matchedPairs === numberOfPairs) {
             document.getElementById("message").textContent =
-                "🎉 Amazing! You found all 10 pairs!";
+                `🎉 Amazing! You found all ${numberOfPairs} pairs!`;
 
             // Return to the main menu after 2 seconds
             setTimeout(() => {
