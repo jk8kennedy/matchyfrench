@@ -10,7 +10,7 @@ const vocabulary = {
 
     Food: [
         { fr: "pomme", en: "Apple", emoji: "🍎" },
-        { fr: "riz", en: "Rice / Meal", emoji: "🍚" },
+        { fr: "riz", en: "Rice", emoji: "🍚" },
         { fr: "eau", en: "Water", emoji: "💧" },
         { fr: "pain", en: "Bread", emoji: "🍞" },
         { fr: "œuf", en: "Egg", emoji: "🥚" },
